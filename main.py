@@ -21,9 +21,10 @@ elif address_input.find('神奈川') != -1:
     price = 105
 # その他の場合
 else:
-    if address_input.__eq__("京都"): #京都と検索すると東京も一緒に検索されて結果が出る間違い修正
+    if address_input.__eq__("京都"): #京都と検索すると東京都も一緒に検索されて結果が出る間違い修正
         address_input += '府'
     price = 115
+
 # csv File encoding utf-8
 # shitf-jis
 with open('SampleData.csv', encoding='utf-8', newline='') as csvfile:
@@ -37,15 +38,13 @@ with open('SampleData.csv', encoding='utf-8', newline='') as csvfile:
             print('料金:' + str(price) + '円')
             count += 1
             sum_Price += price
-        else :
-            continue
-        print()
+            print()
 
 print(address_input+"件: "+str(count)+"件,\t総価格:"+str(sum_Price)+"円")
 
 
 
-# 全体料金計算
+#全体料金計算
 
 # import csv
 # price = [0,95,105,115] #件別料金
